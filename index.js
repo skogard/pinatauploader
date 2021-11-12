@@ -23,15 +23,12 @@ const pinDirectoryToPinata = async () => {
       method: 'POST',
       headers: {
         "Content-Type": `multipart/form-data; boundary=${data._boundary}`,
-        "Authorization": jwt
+        "Authorization": `Bearer ${jwt}`
       },
       body: data
     })		
     .on('uploadProgress', progress => {
-      if (progress.percent > percent+0.01) {
-        percent+=0.01;
-        console.log("progress", percent)
-      }
+      console.log(progress)
     });
     console.timeEnd("upload")
     console.log(JSON.parse(response.body));
