@@ -6,7 +6,8 @@ const got = require('got');
 const jwt = "<YOUR PINATA JWT HERE>"
 const pinDirectoryToPinata = async () => {
   const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
-  const src = "ipfs"
+  //const src = "ipfs"
+  const src = "metadata"
   var status = 0;
   let percent = 0;
   console.time("upload")
